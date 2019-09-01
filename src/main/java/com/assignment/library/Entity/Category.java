@@ -11,7 +11,6 @@ import java.util.List;
 @Entity
 @Table(name = "book_category")
 @JsonIgnoreProperties(value = "books")
-@EntityListeners(AuditingEntityListener.class)
 public class Category extends AuditModel{
 
     @NotNull

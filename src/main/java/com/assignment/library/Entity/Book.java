@@ -1,5 +1,6 @@
 package com.assignment.library.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -10,15 +11,15 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "books")
-@EntityListeners(AuditingEntityListener.class)
 public class Book extends AuditModel{
 
-
     @NotNull
+    @Size(min=1,message="Title cannot be null")
     @Column(name="TITLE")
     private String title;
 
     @NotNull
+    @Size(min=1,message="Author cannot be null")
     @Column(name="AUTHOR_NAME")
     private String author;
 
